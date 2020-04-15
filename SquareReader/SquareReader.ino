@@ -1,5 +1,4 @@
 String inputString = "";         // a String to hold incoming data
-bool stringComplete = false;  // whether the string is complete
 int vectorControl[3]= {1,2,3};
 int inputVector[3]={3,0,0};
 int resultVector[3]={0,0,0};
@@ -44,7 +43,6 @@ void fill(){
 void Read(int vin[]){
   int count=0;
   bool coin=false;
-  int missing[]={0,0,0};
   for(int i=0;i<tam;i++){
     for(int j=0;j<tam;j++){
       if(vectorControl[i]==vin[j]){
