@@ -1,9 +1,9 @@
 String inputString = "";         // a String to hold incoming data
-int vectorControl[3]= {1,2,3};
-int inputVector[3]={3,0,0};
-int resultVector[3]={0,0,0};
-bool spaceVector[3]={false,false,false};
-const int tam=3;
+int vectorControl[]= {1,2,3,4,5,6,7,8,9};
+int inputVector[]={1,2,0,4,5,6,7,8,9};
+int resultVector[]={0,0,0,0,0,0,0,0,0};
+bool spaceVector[]={false,false,false,false,false,false,false,false,false};
+const int tam=9;
 
 void setup() {
   // initialize serial:
@@ -12,13 +12,30 @@ void setup() {
   inputString.reserve(20);
   Serial.println("Hola");
   delay(1000);
-  Read(inputVector);
+  //Read(inputVector);
   delay(1000);
-  fill();
+  fillOne(inputVector);
 }
 
 void loop() { 
 }
+
+void fillOne(int vin[]){
+  int cont=0;
+  Read(vin);
+  for(int i=0;i<tam;i++){
+    if(spaceVector[i]==true){
+      cont++;
+    }
+  }
+  if(cont==1){
+    fill();
+  }
+}
+
+void filling(){
+  
+  }
 
 void fill(){
   int cont=0;
